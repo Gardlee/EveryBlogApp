@@ -3,6 +3,7 @@ import { FontAwesome } from "@expo/vector-icons";
 import { Ionicons } from '@expo/vector-icons';
 
 export default function Body() {
+    
     return (
         <View>
             <View style={{ flexDirection: "row", justifyContent: "space-around" }}>

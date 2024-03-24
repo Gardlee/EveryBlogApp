@@ -1,12 +1,14 @@
 import { Text, View } from 'react-native';
 import { FontAwesome } from "@expo/vector-icons";
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Head01() {
+    const navigation = useNavigation();
     return (
         <View >
             <View style={{ flexDirection: "row",padding: 10 ,justifyContent:"space-between",borderBottomWidth:0.5}} >
-                <Ionicons name="sparkles" size={24} color="black"/>
+                <Ionicons name="sparkles" size={24} color="black" onPress={()=>{ navigation.navigate("Page02"); }} />
                 <Text style={{ fontSize: 20, color: "black",marginRight:10 }}>Following</Text>
                 <Text style={{ fontSize: 20, color: "black",marginLeft:10 }}>For You</Text>
                 <Ionicons name="search" size={24} color="black"/>

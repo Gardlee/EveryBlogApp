@@ -42,6 +42,7 @@ export default function Page02FlatList(props) {
                 </View>
                 <FlatList
                     style={{ margin: 10 }}
+                    showsHorizontalScrollIndicator={false}
                     horizontal={true}
                     data={content1}
                     renderItem={
@@ -69,6 +70,7 @@ export default function Page02FlatList(props) {
                 </View>
                 <FlatList
                     style={{ margin: 10 }}
+                    showsHorizontalScrollIndicator={false}
                     horizontal={true}
                     data={content2}
                     renderItem={
@@ -96,6 +98,7 @@ export default function Page02FlatList(props) {
                 </View>
                 <FlatList
                     style={{ margin: 10 }}
+                    showsHorizontalScrollIndicator={false}
                     horizontal={true}
                     data={content3}
                     renderItem={
