@@ -40,9 +40,9 @@ export default function Head03() {
                     <Button title="Follow" color="#F7418F" />
                 </View>
                 <View style={{ width: 150, height: 50, borderRadius: 5 }} >
-                    <Button title="Edit Profile" color="#F7418F"  />
+                    <Button title="Edit Profile" color="#F7418F" onPress={()=>{ navigation.navigate("Page05");}} />
                 </View>
-                <AntDesign name="mail" size={24} color="black" marginTop={7} onPress={()=>{ navigation.navigate("Page04"); }} />
+                <AntDesign name="mail" size={24} color="black" marginTop={7} />
             </View>
             <View style={{ flexDirection: "row", padding: 10, justifyContent: "space-around", borderBottomWidth: 0.3, marginTop: -5 }}>
                 <Ionicons name="grid" size={24} color="black" />

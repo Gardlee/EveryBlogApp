@@ -8,10 +8,10 @@ export default function Head01() {
     return (
         <View >
             <View style={{ flexDirection: "row",padding: 10 ,justifyContent:"space-between",borderBottomWidth:0.5}} >
-                <Ionicons name="sparkles" size={24} color="black" onPress={()=>{ navigation.navigate("Page02"); }} />
-                <Text style={{ fontSize: 20, color: "black",marginRight:10 }}>Following</Text>
+                <Ionicons name="sparkles" size={24} color="black" onPress={()=>{ navigation.navigate("Book"); }} />
+                <Text onPress={()=>{ navigation.navigate("Page06"); }} style={{ fontSize: 20, color: "black",marginRight:10 }}>Following</Text>
                 <Text style={{ fontSize: 20, color: "black",marginLeft:10 }}>For You</Text>
-                <Ionicons name="search" size={24} color="black"/>
+                <Ionicons name="search" size={24} color="black" onPress={()=>{ navigation.navigate("Page02"); }}/>
             </View>
             <View style={{ flexDirection: "row",padding: 10 ,justifyContent:"space-around"}}>
                 <Text style={{ fontSize: 15, color: "gray" }}>All</Text>
