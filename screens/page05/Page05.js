@@ -85,35 +85,6 @@ export default function Page05() {
                     placeholder= "What's in your email?"
                 />
             </View>
-
-            {/* <Text style={{}}>Edit Your Profile </Text>
-            <View style={{}}>
-                <Text style={{}}>Name : </Text>
-                <TextInput
-                    style={{}}
-                    //keyboardType="numeric"
-                    onChangeText={(text) => setName((text))}
-                    value={name}
-                />
-            </View>
-            <View style={{}}>
-                <Text style={{}}>Age :</Text>
-                <TextInput
-                    style={{}}
-                    //keyboardType="numeric"
-                    onChangeText={(text) => setAge((text))}
-                    value={age}
-                />
-            </View>
-            <View style={{}}>
-                <Text>Email :</Text>
-                <TextInput
-                    // style={styles.input}
-                    //keyboardType="numeric"
-                    onChangeText={(text) => setEmail((text))}
-                    value={email}
-                />
-            </View> */}
             <View style={{ width: 150, height: 50, borderRadius: 5 ,marginHorizontal:20,marginVertical:30 }}>
                 <Button title="Save" onPress={save} color="#F7418F" />
             </View>
@@ -122,40 +93,3 @@ export default function Page05() {
     );
 }
 
-// const styles = StyleSheet.create({
-//     container: {
-//         flex: 1,
-//         padding: 20,
-//     },
-//     title: {
-//         fontSize: 24,
-//         // fontWeight: "bold",
-//         marginBottom: 20,
-//     },
-//     inputContainer: {
-//         flexDirection: "row",
-//         alignItems: "center",
-//         marginBottom: 10,
-//     },
-//     label: {
-//         marginRight: 10,
-//     },
-//     input: {
-//         borderWidth: 1,
-//         borderColor: "#ccc",
-//         padding: 8,
-//         flex: 1,
-//         marginLeft: 20 ,
-//         marginTop:10 ,
-//         borderBottomWidth:1.5,
-//         borderColor:"pink" ,
-//         marginEnd:70
-//     },
-//     displayContainer: {
-//         marginTop: 20,
-//     },
-//     displayText: {
-//         fontSize: 18,
-//         marginBottom: 5,
-//     },
-// });

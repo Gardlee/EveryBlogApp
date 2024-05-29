@@ -12,6 +12,7 @@ import BookForm from '../screens/page04/BookForm';
 import PostForm from '../screens/page04/PostForm';
 import Page06 from '../screens/page06/Page06';
 import PostDetail from '../screens/page04/PostDetail';
+import HomeDetail from '../screens/page04/HomeDetail';
 
 const Stack = createStackNavigator();
 
@@ -67,6 +68,11 @@ export default function HomeStack() {
         name="PostDetail"
         component={PostDetail}
         options={{ title: "Post Detail", headerShown: false }}
+      />
+      <Stack.Screen
+        name="HomeDetail"
+        component={HomeDetail}
+        options={{ title: "Home Detail", headerShown: false }}
       />
     </Stack.Navigator>
   );

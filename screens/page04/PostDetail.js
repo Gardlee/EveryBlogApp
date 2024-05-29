@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
@@ -10,7 +10,7 @@ export default function PostDetail({ route }) {
   const [post, setPost] = useState(null);
 
   useEffect(() => {
-    fetch(`http://192.168.1.16:8081/api/${postId}/?format=json`)
+    fetch(`http://192.168.1.16:8080/api/${postId}/?format=json`)
       .then(response => response.json())
       .then(data => setPost(data));
   }, [postId]);
@@ -21,8 +21,8 @@ export default function PostDetail({ route }) {
   const navigation = useNavigation();
 
   return (
-    <View>
-      <View style={styles.container}>
+    <View style={{ flex: 1 }}>
+      <ScrollView style={styles.container}>
         <View style={{ flexDirection: "row", padding: 10, marginLeft: -10, justifyContent: "space-between" }} >
           <MaterialIcons name="arrow-back-ios-new" size={24} color="black" onPress={() => { navigation.navigate("Page03"); }} />
           <Text style={{ fontSize: 18, color: "black", marginRight: 10 }}>@PrettyKitten</Text>
@@ -33,7 +33,7 @@ export default function PostDetail({ route }) {
         <Text style={styles.username}>Posted by: PrettyKitten</Text>
         <Text style={styles.detail}>{post.detail}</Text>
         <Text style={styles.likes}>{post.likes} likes</Text>
-      </View>
+      </ScrollView>
       <Bottom />
     </View>
   );

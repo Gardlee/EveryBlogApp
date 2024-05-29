@@ -7,7 +7,7 @@ export default function Body03() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch('http://192.168.1.16:8081/api/?format=json')
+    fetch('http://192.168.1.16:8080/api/?format=json')
       .then((response) => response.json())
       .then((data) => setPosts(data));
   }, []);

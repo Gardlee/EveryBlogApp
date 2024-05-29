@@ -1,30 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import Bottom from '../../components/page01/Bottom01';
+
 
 export default function PostDetail({ route }) {
   const { postId } = route.params;
   const [post, setPost] = useState(null);
 
   useEffect(() => {
-    fetch(`http://192.168.1.16:8081/api/Home/${postId}/?format=json`)
+    fetch(`http://192.168.1.16:8080/api/home/${postId}/?format=json`)
       .then(response => response.json())
-      .then(data => setPost(data));
+      .then(data => setPost(data))
+      .catch(error => console.error('Error fetching post:', error));
   }, [postId]);
+
+  const navigation = useNavigation();
 
   if (!post) {
     return <Text>Loading...</Text>;
   }
-  const navigation = useNavigation();
 
   return (
-    <View>
-      <View style={styles.container}>
-        <View style={{ flexDirection: "row", padding: 10, marginLeft: -10, justifyContent: "space-between" }} >
-          <MaterialIcons name="arrow-back-ios-new" size={24} color="black" onPress={() => { navigation.navigate("Page03"); }} />
+    <View style={{ flex: 1 }}>
+      <ScrollView style={styles.container}>
+        <View style={{ flexDirection: "row", padding: 10, marginLeft: -10, justifyContent: "space-between" }}>
+          <MaterialIcons name="arrow-back-ios-new" size={24} color="black" onPress={() => navigation.navigate("Page01")} />
           <Text style={{ fontSize: 18, color: "black", marginRight: 10 }}>@{post.username}</Text>
           <Entypo name="dots-three-horizontal" size={24} color="black" />
         </View>
@@ -33,7 +36,7 @@ export default function PostDetail({ route }) {
         <Text style={styles.username}>Posted by: {post.username}</Text>
         <Text style={styles.detail}>{post.detail}</Text>
         <Text style={styles.likes}>{post.likes} likes</Text>
-      </View>
+      </ScrollView>
       <Bottom />
     </View>
   );
@@ -70,3 +73,4 @@ const styles = StyleSheet.create({
     color: 'grey',
   },
 });
+
